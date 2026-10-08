@@ -1,0 +1,149 @@
+[gd_scene load_steps=27 format=3]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="2"]
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.12, 0.3, 0.52, 1)
+sky_horizon_color = Color(0.7, 0.8, 0.86, 1)
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.7, 0.8, 1, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.19, 0.26, 0.31, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="GroundMesh"]
+material = SubResource("GroundMat")
+size = Vector3(32, 1, 32)
+[sub_resource type="BoxShape3D" id="GroundShape"]
+size = Vector3(32, 1, 32)
+[sub_resource type="StandardMaterial3D" id="NorthWallMat"]
+albedo_color = Color(0.32, 0.4, 0.51, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="NorthWallMesh"]
+material = SubResource("NorthWallMat")
+size = Vector3(22, 4, 0.5)
+[sub_resource type="BoxShape3D" id="NorthWallShape"]
+size = Vector3(22, 4, 0.5)
+[sub_resource type="StandardMaterial3D" id="WestWallMat"]
+albedo_color = Color(0.32, 0.4, 0.51, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="WestWallMesh"]
+material = SubResource("WestWallMat")
+size = Vector3(0.5, 4, 20)
+[sub_resource type="BoxShape3D" id="WestWallShape"]
+size = Vector3(0.5, 4, 20)
+[sub_resource type="StandardMaterial3D" id="BlockAMat"]
+albedo_color = Color(0.96, 0.53, 0.16, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="BlockAMesh"]
+material = SubResource("BlockAMat")
+size = Vector3(2, 1.5, 2)
+[sub_resource type="BoxShape3D" id="BlockAShape"]
+size = Vector3(2, 1.5, 2)
+[sub_resource type="StandardMaterial3D" id="BlockBMat"]
+albedo_color = Color(0.96, 0.53, 0.16, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="BlockBMesh"]
+material = SubResource("BlockBMat")
+size = Vector3(2, 2, 2)
+[sub_resource type="BoxShape3D" id="BlockBShape"]
+size = Vector3(2, 2, 2)
+[sub_resource type="StandardMaterial3D" id="StepMat"]
+albedo_color = Color(0.8, 0.65, 0.3, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="StepMesh"]
+material = SubResource("StepMat")
+size = Vector3(2, 0.5, 2)
+[sub_resource type="BoxShape3D" id="StepShape"]
+size = Vector3(2, 0.5, 2)
+[sub_resource type="StandardMaterial3D" id="CornerMat"]
+albedo_color = Color(0.42, 0.49, 0.61, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="CornerMesh"]
+material = SubResource("CornerMat")
+size = Vector3(0.5, 3, 6)
+[sub_resource type="BoxShape3D" id="CornerShape"]
+size = Vector3(0.5, 3, 6)
+[node name="Level" type="Node3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.9, -0.55, 0)
+light_energy = 0.8
+shadow_enabled = true
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector3(0, 0.1, 5)
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("GroundMesh")
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("GroundShape")
+[node name="NorthWall" type="StaticBody3D" parent="."]
+position = Vector3(0, 2, -10)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="NorthWall"]
+mesh = SubResource("NorthWallMesh")
+[node name="Collision" type="CollisionShape3D" parent="NorthWall"]
+shape = SubResource("NorthWallShape")
+[node name="WestWall" type="StaticBody3D" parent="."]
+position = Vector3(-10, 2, 0)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="WestWall"]
+mesh = SubResource("WestWallMesh")
+[node name="Collision" type="CollisionShape3D" parent="WestWall"]
+shape = SubResource("WestWallShape")
+[node name="BlockA" type="StaticBody3D" parent="."]
+position = Vector3(3, 0.75, 0)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="BlockA"]
+mesh = SubResource("BlockAMesh")
+[node name="Collision" type="CollisionShape3D" parent="BlockA"]
+shape = SubResource("BlockAShape")
+[node name="BlockB" type="StaticBody3D" parent="."]
+position = Vector3(-3, 1, 0)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="BlockB"]
+mesh = SubResource("BlockBMesh")
+[node name="Collision" type="CollisionShape3D" parent="BlockB"]
+shape = SubResource("BlockBShape")
+[node name="Step" type="StaticBody3D" parent="."]
+position = Vector3(3, 0.25, 3)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="Step"]
+mesh = SubResource("StepMesh")
+[node name="Collision" type="CollisionShape3D" parent="Step"]
+shape = SubResource("StepShape")
+[node name="Corner" type="StaticBody3D" parent="."]
+position = Vector3(6, 1.5, -5)
+collision_layer = 1
+collision_mask = 2
+[node name="Mesh" type="MeshInstance3D" parent="Corner"]
+mesh = SubResource("CornerMesh")
+[node name="Collision" type="CollisionShape3D" parent="Corner"]
+shape = SubResource("CornerShape")
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2")
+[node name="Panel" type="Panel" parent="HUD"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 590.0
+offset_bottom = 260.0
+[node name="Label" type="Label" parent="HUD/Panel"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 560.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20

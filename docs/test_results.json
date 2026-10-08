@@ -1,0 +1,77 @@
+{
+	"engine": "4.7.2-stable (official)",
+	"physics_hz": 60,
+	"rendered": true,
+	"results": [
+		{
+			"detail": "(0.0, 0.00013, 5.0)",
+			"passed": true,
+			"test": "Suelo e Idle"
+		},
+		{
+			"detail": "7.0",
+			"passed": true,
+			"test": "Jump al despegar"
+		},
+		{
+			"detail": "vy antes 3.0000 / después 2.6667",
+			"passed": true,
+			"test": "Sin doble salto"
+		},
+		{
+			"detail": "(0.0, 0.000843, 5.0)",
+			"passed": true,
+			"test": "Aterrizaje a Idle"
+		},
+		{
+			"detail": "(0.0, 0.000391, 3.813333)",
+			"passed": true,
+			"test": "Walk"
+		},
+		{
+			"detail": "(0.0, 0.0, 0.0)",
+			"passed": true,
+			"test": "Walk a Idle"
+		},
+		{
+			"detail": "120 ticks (2 s): 9.520004 m",
+			"passed": true,
+			"test": "Desplazamiento 30 FPS"
+		},
+		{
+			"detail": "120 ticks (2 s): 9.520004 m",
+			"passed": true,
+			"test": "Desplazamiento 144 FPS"
+		},
+		{
+			"detail": "Diferencia 0.00000000 m",
+			"passed": true,
+			"test": "Comparación 30/144"
+		},
+		{
+			"detail": "(-2.02, 0.0, 0.0)",
+			"passed": true,
+			"test": "Movimiento relativo a cámara 90 grados"
+		},
+		{
+			"detail": "(3.0, 0.000147, 1.350206)",
+			"passed": true,
+			"test": "Colisión con bloque"
+		},
+		{
+			"detail": "(-9.4001, 0.000845, -9.4001)",
+			"passed": true,
+			"test": "Esquina sin atravesar paredes"
+		},
+		{
+			"detail": "Longitud 1.6211 m",
+			"passed": true,
+			"test": "SpringArm ante pared"
+		},
+		{
+			"detail": "72 ángulos, rayos pivot-cámara sin intersección",
+			"passed": true,
+			"test": "Giro 360 grados junto a esquina"
+		}
+	]
+}

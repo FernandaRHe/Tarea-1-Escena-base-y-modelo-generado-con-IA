@@ -1,0 +1,28 @@
+{
+	"height_m": 1.8,
+	"materials": 2,
+	"parts": [
+		{
+			"node": "PlaceholderBody",
+			"scale": "(1.0, 1.0, 1.0)",
+			"surfaces": 1,
+			"triangles": 3456
+		},
+		{
+			"node": "PlaceholderHead",
+			"scale": "(1.0, 1.0, 1.0)",
+			"surfaces": 1,
+			"triangles": 4224
+		},
+		{
+			"node": "Visor",
+			"scale": "(1.0, 1.0, 1.0)",
+			"surfaces": 1,
+			"triangles": 12
+		}
+	],
+	"skeleton": false,
+	"status": "PROVISIONAL - not an AI model or authorized practice resource",
+	"textures": 0,
+	"triangles": 7692
+}

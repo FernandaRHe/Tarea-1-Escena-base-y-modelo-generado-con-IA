@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3]
+[sub_resource type="StandardMaterial3D" id="BodyMat"]
+albedo_color = Color(0.08, 0.72, 0.7, 1)
+roughness = 0.65
+[sub_resource type="StandardMaterial3D" id="FaceMat"]
+albedo_color = Color(0.03, 0.07, 0.11, 1)
+[sub_resource type="CapsuleMesh" id="Body"]
+material = SubResource("BodyMat")
+radius = 0.32
+height = 1.2
+[sub_resource type="SphereMesh" id="Head"]
+material = SubResource("BodyMat")
+radius = 0.3
+height = 0.6
+[sub_resource type="BoxMesh" id="Face"]
+material = SubResource("FaceMat")
+size = Vector3(0.38, 0.12, 0.08)
+[node name="ModelWrapper" type="Node3D"]
+[node name="PlaceholderBody" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.65, 0)
+mesh = SubResource("Body")
+[node name="PlaceholderHead" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Head")
+[node name="Visor" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.52, 0.28)
+mesh = SubResource("Face")

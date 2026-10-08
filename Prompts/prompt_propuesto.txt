@@ -1,0 +1,5 @@
+ESTADO: PROPUESTA NO EJECUTADA EN TRIPO/MESHY. NO ES EVIDENCIA DE GENERACIÓN.
+
+Un robot humanoide sencillo de estilo low poly para un juego 3D educativo. Cuerpo compacto color turquesa, cabeza redondeada con visor oscuro, dos brazos y dos piernas claramente separados. Pose A simétrica, pies planos apoyados en el suelo, manos sencillas, sin accesorios sueltos ni partes flotantes. Silueta legible desde todos los lados. Altura objetivo de 1.8 metros. Malla apta para rig humanoide posterior, hombros, codos, caderas y rodillas distinguibles. Pocos materiales, sin transparencias. Exportable como GLB con materiales incluidos.
+
+Al generar, guardar el prompt EXACTAMENTE ejecutado en otro archivo, con nombre de herramienta, versión/ID visible, fecha, ajustes reales, ID/URL del resultado, licencia y archivo exportado. No presentar las especificaciones del prompt como métricas obtenidas.
